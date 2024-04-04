@@ -153,7 +153,7 @@ A Benchmark Study on GPT-4, Claude 3 Opus, and Gemini 1.0 Ultra</h1>
               </span>
               <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="https://www.anthropic.com/claude"
+                <a href="https://agi4engineering.github.io/LLM4Control/ControlBench.zip"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
@@ -200,8 +200,9 @@ A Benchmark Study on GPT-4, Claude 3 Opus, and Gemini 1.0 Ultra</h1>
 <section class="section">
   <div class="container is-max-desktop">
     <div class="content">
-     <h3>ControlBench</h3>
-    <p> We show our zero-shot prompt and self-checking prompt as below. </p>
+     <h3>ControlBench Dataset</h3>
+    <p>We introduce ControlBench, a benchmark dataset tailored to reflect the breadth, depth, and complexity of classical control design. The statistics of ControlBench 
+      for each sub-topic is summarzed as below.</p>
       </div>
     <!-- Summary of the work -->
      <div class="content">
@@ -211,12 +212,12 @@ A Benchmark Study on GPT-4, Claude 3 Opus, and Gemini 1.0 Ultra</h1>
     </div>
     <!-- Explanation of the diagram -->
     <div class="content" style="margin-top: 20px;">
-    <ol>
-        <li>We introduce ControlBench, a benchmark dataset tailored to reflect the breadth, depth, and complexity of classical control design.</li>
-        <li>ControlBench comprises problems sourced from exercises in <a href="https://www-accessengineeringlibrary-com.proxy2.library.illinois.edu/content/book/9780071829489?implicit-login=true">Schaum’s outline of feedback and control systems</a>,
+    <ul>
+        <li>ControlBench comprises 147 problems sourced from exercises in <a href="https://www-accessengineeringlibrary-com.proxy2.library.illinois.edu/content/book/9780071829489?implicit-login=true">Schaum’s outline of feedback and control systems</a>,
           and problems gathered from undergraduate control classes at University of Michigan (EECS 460) and University of Illinois, Urbana-Champaign (ECE 486).</li>
-        <li>Both textual and visual elements are inclcuded in ControlBench to mirror the multifaceted nature of real-world applications.</li>
-      </ol>
+        <li>We also introduced ControlBench-C, tansformed from ControlBench by reformulating 100 open-ended problems into multiple-choice for efficient evaluations.</li>
+        <li>Both textual and visual elements are inclcuded in ControlBench and ControlBench-C to mirror the multifaceted nature of real-world applications.</li>
+      </ul>
     </div>
   </div>
 </div>
@@ -225,21 +226,15 @@ A Benchmark Study on GPT-4, Claude 3 Opus, and Gemini 1.0 Ultra</h1>
 <section class="section">
   <div class="container is-max-desktop">
     <div class="content">
-     <h3>Zero-shot Prompting and Self-Checking Prompt</h3>
-    <p> We show our zero-shot prompt and self-checking prompt as below. </p>
+     <h3>Evaluations of Leading LLMs on ControlBench</h3>
+    <p>We assess the capabilities of GPT-4, Claude 3 Opus, and Gemini 1.0 Ultra on ControlBench using a zero-shot prompting followed by self-checking strategy, and examine the responses through human annotation. 
+      Below we present our zero-shot prompt and self-checking prompt.</p>
       </div>
     <!-- Summary of the work -->
      <div class="content">
     <div style="text-align: center; margin-top: 20px;"> <!-- Center align the image container -->
       <img src="./static/images/zero_prompt.png"
            style="width: 100%; max-width: 1200px; height: auto; display: block; margin: 0 auto;" <!-- Make the image responsive and centered -->
-    </div>
-    <!-- Explanation of the diagram -->
-    <div class="content" style="margin-top: 20px;">
-      <p>As To facilitate a foundational understanding of how LLMs approach control problems, we start with a zero-shot prompting strategy (left) 
-        (i.e., directly inputting the question) and examine the responses through human annotation. To understand how self-checking can improve the performance, 
-        we also study a setting where a subsequent self-checking prompt (right) to aid LLMs in 
-        identifying and rectifying their previous mistakes.</p>
     </div>
   </div>
 </div>
@@ -252,14 +247,17 @@ A Benchmark Study on GPT-4, Claude 3 Opus, and Gemini 1.0 Ultra</h1>
     <!-- Summary of the work -->
     <div class="content">
       <h3>Evaluation Results</h3>
+      <p><strong>Evaluation Metrics</strong>: Accuracy (<strong>ACC</strong>) is defined as the proportion of instances where the LLMs correctly solve the given problems, while Self-Checked Accuracy (<strong>ACC-s</strong>) quantifies the instances in which LLMs 
+        successfully amend their answers after a self-review process.</p>
       <div style="text-align: center; margin-top: 20px;"> <!-- Center align the image container -->
       <img src="./static/images/evaluations_whole.png"
            style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;" <!-- Make the image responsive and centered -->
       </div>
       <div class="content has-text-justified">
         <ul>
-          <li> Claude-3 is the best
-          <li> GPT-4 is the second 
+          <li>Claude 3 Opus emerges as the standout model, demonstrating superior performance in both ACC and ACC-s.</li>
+          <li>GPT-4 displays competitive accuracy in specific areas, such as Block Diagrams, Root-Locus Design, and System Sensitivity Measures, but does not match Claude 3 Opus in overall performance.</li>
+          <li>Gemini 1.0 Ultra ranks lower in general effectiveness.</li>
         </ul>
        </div>
    </div>
@@ -308,19 +306,17 @@ A Benchmark Study on GPT-4, Claude 3 Opus, and Gemini 1.0 Ultra</h1>
 </section>
 
 
-
-
-<!-- <section class="section" id="BibTeX">
+<section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@article{Darioush2024ControlBench,
+  author    = {Darioush, Kevian and Usman, Syed and Xingang, Guo and Aaron, Havens and Geir, Dullerud and Peter, Seiler and Lianhui, Qin and Bin, Hu},
+  title     = {Capabilities of Large Language Models in Control Engineering: A Benchmark Study on GPT-4, Claude 3 Opus, and Gemini 1.0 Ultra},
+  journal   = {arXiv},
+  year      = {2024},
 }</code></pre>
   </div>
-</section> -->
+</section>
 
 
 <footer class="footer">
