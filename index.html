@@ -301,34 +301,22 @@ A Benchmark Study on GPT-4, Claude 3 Opus, and Gemini 1.0 Ultra</h1>
     <div class="slider-container">
       <div class="slider-wrapper">
         <div class="slider-item">
-          <h3 class="image-title">Title of Image 1</h3>
           <img src="./static/images/example1.png" alt="Image 1">
-          <div class="image-caption">This is an explanation of image 1.</div>
         </div>
         <div class="slider-item">
-          <h3 class="image-title">Title of Image 1</h3>
           <img src="./static/images/example2.png" alt="Image 2">  
-          <div class="image-caption">This is an explanation of image 1.</div>
         </div>
         <div class="slider-item">
-          <h3 class="image-title">Title of Image 1</h3>
           <img src="./static/images/example3.png" alt="Image 3">
-          <div class="image-caption">This is an explanation of image 1.</div>
         </div>
         <div class="slider-item">
-          <h3 class="image-title">Title of Image 1</h3>
           <img src="./static/images/example4.png" alt="Image 4">
-          <div class="image-caption">This is an explanation of image 1.</div>
         </div>
            <div class="slider-item">
-             <h3 class="image-title">Title of Image 1</h3>
           <img src="./static/images/example5.png" alt="Image 5">
-             <div class="image-caption">This is an explanation of image 1.</div>
         </div>
          <div class="slider-item">
-           <h3 class="image-title">Title of Image 1</h3>
           <img src="./static/images/example6.png" alt="Image 6">
-           <div class="image-caption">This is an explanation of image 1.</div>
         </div>
       </div>
       <button class="left-btn"><</button>
@@ -385,7 +373,7 @@ A Benchmark Study on GPT-4, Claude 3 Opus, and Gemini 1.0 Ultra</h1>
 </footer>
 
 
-<script>
+<!-- <script>
   const sliderWrapper = document.querySelector('.slider-wrapper');
   const sliderItems = document.querySelectorAll('.slider-item');
   let currentIndex = 0;
@@ -408,7 +396,40 @@ A Benchmark Study on GPT-4, Claude 3 Opus, and Gemini 1.0 Ultra</h1>
     const newTransformValue = -currentIndex * 100; // Assuming each slide is 100% of the container width
     sliderWrapper.style.transform = `translateX(${newTransformValue}%)`;
   }
+</script> -->
+
+
+<script>
+  const sliderWrapper = document.querySelector('.slider-wrapper');
+  const sliderItems = document.querySelectorAll('.slider-item');
+  let currentIndex = 0;
+
+  document.querySelector('.left-btn').addEventListener('click', () => {
+    // Modify this to go to the last image if currently at the first image
+    if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      currentIndex = sliderItems.length - 1; // Go to the last image
+    }
+    updateSliderPosition();
+  });
+
+  document.querySelector('.right-btn').addEventListener('click', () => {
+    // Reset currentIndex to 0 if on the last image, otherwise increment
+    if (currentIndex < sliderItems.length - 1) {
+      currentIndex++;
+    } else {
+      currentIndex = 0; // Reset to the first image
+    }
+    updateSliderPosition();
+  });
+
+  function updateSliderPosition() {
+    const newTransformValue = -currentIndex * 100; // Assuming each slide is 100% of the container width
+    sliderWrapper.style.transform = `translateX(${newTransformValue}%)`;
+  }
 </script>
+
 
 </body>
 </html>
