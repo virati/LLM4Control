@@ -310,5 +310,31 @@ A Benchmark Study on GPT-4, Claude 3 Opus, and Gemini 1.0 Ultra</h1>
   </div>
 </footer>
 
+
+<script>
+  const sliderWrapper = document.querySelector('.slider-wrapper');
+  const sliderItems = document.querySelectorAll('.slider-item');
+  let currentIndex = 0;
+
+  document.querySelector('.left-btn').addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSliderPosition();
+    }
+  });
+
+  document.querySelector('.right-btn').addEventListener('click', () => {
+    if (currentIndex < sliderItems.length - 1) {
+      currentIndex++;
+      updateSliderPosition();
+    }
+  });
+
+  function updateSliderPosition() {
+    const newTransformValue = -currentIndex * 100; // Assuming each slide is 100% of the container width
+    sliderWrapper.style.transform = `translateX(${newTransformValue}%)`;
+  }
+</script>
+
 </body>
 </html>
