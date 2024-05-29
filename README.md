@@ -1,14 +1,13 @@
-# Nerfies
+# ControlBench
 
-This is the repository that contains source code for the [Nerfies website](https://nerfies.github.io).
+This repository contains the base benchmarks of "Control Bench", forked from [here](https://github.com/AGI4Engineering/LLM4Control).
+Based on the article [here](https://arxiv.org/abs/2404.03647), which can be cited:
 
-If you find Nerfies useful for your work please cite:
-```
-@article{park2021nerfies
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+@article{Darioush2024ControlBench,
+  author    = {Darioush, Kevian and Usman, Syed and Xingang, Guo and Aaron, Havens and Geir, Dullerud and Peter, Seiler and Lianhui, Qin and Bin, Hu},
+  title     = {Capabilities of Large Language Models in Control Engineering: A Benchmark Study on GPT-4, Claude 3 Opus, and Gemini 1.0 Ultra},
+  journal   = {arXiv preprint arXiv:2404.03647},
+  year      = {2024},
 }
 ```
 
