@@ -526,6 +526,7 @@ Show that the Laplace transform of the derivative \(\frac{df}{dt}\) of a functio
 is given by \(\mathcal{L}\left[ \frac{df}{dt} \right] = sF(s)-f(0^+)\), where \(F(s) = \mathcal{L}[f(t)]\).
 
 \textbf{\textcolor{red}{Solution :}} \\
+
 Integrating by parts.
 \begin{equation}
     \lim_{\substack{T \to +\infty \\ \epsilon \to 0}} \int_{\epsilon}^T \frac{df}{dt} e^{-st} dt = \lim_{\substack{T \to +\infty \\ \epsilon \to 0}} \left[ f(t) e^{-st}|_{\epsilon}^T + s \int_{\epsilon}^T f(t) e^{-st} dt\right] = -f(0^+)+s F(s)
@@ -548,6 +549,7 @@ Determine
 \end{itemize}
 
 \textbf{\textcolor{red}{Solution :}} \\
+
 \begin{itemize}
     \item[(a)] \(\omega_n^2 = 9\) or \(\omega_n = 3\) rad/sec
     \item[(b)] \(2\zeta \omega_n = 5\) or \(\zeta = \frac{5}{2\omega_n} = \frac{5}{6}\)
