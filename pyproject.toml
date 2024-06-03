@@ -5,8 +5,10 @@ description = ""
 authors = ["Vineet Tiruvadi <virati@gmail.com>"]
 readme = "README.md"
 
+
 [tool.poetry.dependencies]
 python = "^3.10"
+perplexityai = {git = "https://github.com/nathanrchn/perplexityai.git"}
 
 
 [build-system]

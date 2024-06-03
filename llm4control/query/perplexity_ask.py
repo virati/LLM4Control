@@ -1,7 +1,7 @@
 #%%
 from perplexity import Perplexity
-from ../structurize/generate_json_qa import *
-
+from llm4control.structurize.generate_json_qa import *
+ 
 perplexity = Perplexity()
 #%%
 benchmarks = generate_bench_tree("../ControlBench/ControlBench.tex")
