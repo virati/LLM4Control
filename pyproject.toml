@@ -9,6 +9,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 perplexityai = {git = "https://github.com/nathanrchn/perplexityai.git"}
+tex2py = "^0.0.5"
 
 
 [build-system]
